@@ -2,6 +2,13 @@
 $prenom = "toi qui visites";
 $age = null;
 $message = "";
+$alert = false;
+
+
+if(!empty($_GET['alert']) && $_GET['alert'] == 'display'){
+    $alert = true;
+    $mot = $_GET['mot'];
+}
 
  if(!empty($_GET['lePrenom'])){
      $prenom = $_GET['lePrenom'];
@@ -37,6 +44,15 @@ if($age && $age < 18 )
 
 </head>
 <body>
+
+<?php if($alert){ ?>
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Hey !</strong> Merci d'avoir visité l'autre page !    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <strong>Au fait !</strong> Ton mot était <strong><?= $mot ?></strong> <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<?php } ?>
+
     <h1>J'ai une question</h1>
 
     <form action="index.php" method="GET">
@@ -54,6 +70,6 @@ if($age && $age < 18 )
         <input type="text" name="mot" placeholder="à quel mot je pense ?">
         <button class="btn btn-primary" type="submit">Go</button>
     </form>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
