@@ -1,6 +1,7 @@
 <?php
 $jePenseA = ["huile", "papier", "éponge", "ravioli"];
 
+
 // dire à l'utilisateur si son mot était dans la liste
 
 //faire un bouton de retour vers l'accueil

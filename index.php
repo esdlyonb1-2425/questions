@@ -45,6 +45,7 @@ if($age && $age < 18 )
         <input type="text" name="leAge"  placeholder="ton age?">
         <button class="btn btn-success" type="submit">OK</button>
 
+
     </form>
     <h2>Salut, <?php echo $prenom; ?> !</h2>
     <h2><?php echo $message; ?></h2>
